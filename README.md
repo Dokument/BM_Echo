@@ -3,6 +3,7 @@ Bitmessage Echo Server
 
 This example allows you to setup an echo server on the bitmessage network. PyBitmessage can be found here: https://github.com/Bitmessage/PyBitmessage
 
+ease make sure that you are using Python 2.7.x
 
 Setup
 =====
