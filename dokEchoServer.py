@@ -62,8 +62,12 @@ def processEcho():
     message = inboxMessages['inboxMessages'][newestMessage]['message'].decode('base64') #Gets the message sent by the user
     if (len(message) > 256):
         message = (message[:256] + '... Truncated to 256 characters.\n')
+        
+    echoFooter = "INSERT YOUR TEXT HERE" #This is where what you would like the footer to say. Be sure to add the line breaks
     
-    echoMessage = ('Message successfully received at ' + strftime("%Y-%m-%d %H:%M:%S",timeStamp) + ' UTC/GMT.\n' + '-------------------------------------------------------------------------------\n' + message + '\n\n\nThank you for using EchoServer. For More information about the BitMessage project, please visit https://BitMessage.org\n\nFeel free to contact me with questions or comments: BM-or9zPodxMUmkrmVVGCSV9xT1AibwdTFK9 \n.dok')
+    echoMessage = ('Message successfully received at ' + strftime("%Y-%m-%d %H:%M:%S",timeStamp) + ' UTC/GMT.\n' + 
+    '-------------------------------------------------------------------------------\n' + message + '\n\n\n'+ echoFooter)
+    
     echoMessage = echoMessage.encode('base64') #Encode the message.
 
     print 'Message built, ready to send. Sending...'
